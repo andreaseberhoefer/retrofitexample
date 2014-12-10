@@ -1,0 +1,10 @@
+{
+  "name": "foo-api",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.0.0",
+    "object-to-xml": "0.0.2",
+    "underscore": "1.7.0",
+    "faker": "2.1.1"
+  }
+}

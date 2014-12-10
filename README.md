@@ -10,13 +10,13 @@ git clone git@github.com:andreaseberhoefer/retrofitexample.git
 
 2. Setup the server
 
-cd retrofitexample/server
-npm install
+* cd retrofitexample/server
+* npm install
 
 3. Start the server
 node server.js
 
-4. Go to http://localhost:8080/foo/bar?cmd=command&count=10&fields=somebody,other&&magic=true&magicCount=true and play with the params
+4. Click [here](http://localhost:8080/foo/bar?cmd=command&count=10&fields=somebody,other&&magic=true&magicCount=true) and play with the params
 
 5. Run the client JUnit tests
 cd ../client

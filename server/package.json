@@ -5,6 +5,7 @@
     "express": "~4.0.0",
     "object-to-xml": "0.0.2",
     "underscore": "1.7.0",
-    "faker": "2.1.1"
+    "faker": "2.1.1",
+    "basic-auth": "1.0.0"
   }
 }

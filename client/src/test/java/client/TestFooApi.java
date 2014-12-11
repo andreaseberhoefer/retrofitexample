@@ -14,6 +14,7 @@ import com.github.retrofitexample.client.FooAPI;
 import com.github.retrofitexample.client.FooBarErrorHandler;
 import com.github.retrofitexample.client.FooBarException;
 import com.github.retrofitexample.client.FooBarXMLConverter;
+import com.github.retrofitexample.client.FooBasicAuthInterceptor;
 import com.github.retrofitexample.client.Result;
 
 public class TestFooApi {
@@ -98,6 +99,7 @@ public class TestFooApi {
 	private FooAPI createAPI() {
 		RestAdapter adapter = new Builder()
 		.setEndpoint("http://localhost:8080/foo")
+		.setRequestInterceptor(new FooBasicAuthInterceptor())
 		.setConverter(new FooBarXMLConverter())
 		.setErrorHandler(new FooBarErrorHandler())
 		.build();

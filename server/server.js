@@ -4,11 +4,35 @@ var o2x = require('object-to-xml');
 var _ = require('underscore')
 var faker = require('faker')
 
+
+var basicAuth = require('basic-auth');
+
+var auth = function (req, res, next) {
+  function unauthorized(res) {
+    res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+    return res.send(401);
+  };
+
+  var user = basicAuth(req);
+
+  if (!user || !user.name || !user.pass) {
+    return unauthorized(res);
+  };
+
+  if (user.name === 'foo' && user.pass === 'bar') {
+    return next();
+  } else {
+    return unauthorized(res);
+  };
+};
+
+
+
 var port = process.env.PORT || 8080; // set our port
 
 var router = express.Router(); // get an instance of the express Router
 
-router.get('/bar', function(req, res) {
+router.get('/bar', auth, function(req, res) {
 
   var cmd = req.query.cmd;
 

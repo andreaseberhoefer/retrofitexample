@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
 var o2x = require('object-to-xml');
 var _ = require('underscore')
 var faker = require('faker')
